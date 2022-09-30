@@ -2,8 +2,8 @@ import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Th, Thead, Tr
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 
-import { RiAddLine, RiPencilLine } from 'react-icons/ri'
 import { Pagination } from "../../components/Pagination/";
+import Link from "next/link";
 
 export default function UserList() {
     const isWideVersion = useBreakpointValue({
@@ -23,14 +23,16 @@ export default function UserList() {
                         <Heading size="lg" fontWeight="normal">
                             Usuários
                         </Heading>
-                        <Button
-                            as="a"
-                            size="sm"
-                            fontSize="sm"
-                            colorScheme="pink"
-                        >
-                            Criar novo usuário
-                        </Button>
+                        <Link href="/users/create" passHref>
+                            <Button
+                                as="a"
+                                size="sm"
+                                fontSize="sm"
+                                colorScheme="pink"
+                            >
+                                Criar novo usuário
+                            </Button>
+                        </Link>
                     </Flex>
 
                     <Table colorScheme="whiteAlpha">
@@ -79,7 +81,7 @@ export default function UserList() {
                                         <Text fontSize="sm" color="gray.300">kamiji@mail.com</Text>
                                     </Box>
                                 </Td>
-                                {isWideVersion && <Td>04 de Setembro, 2022</Td>}                         
+                                {isWideVersion && <Td>04 de Setembro, 2022</Td>}
                             </Tr>
                         </Tbody>
                     </Table>
