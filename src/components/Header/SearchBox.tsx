@@ -1,7 +1,14 @@
 import { Flex, Icon, Input } from "@chakra-ui/react";
+import { useRef, useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 
+// Controlled componentes
+// Uncontrolled componentes
+
+// Imperativa e declarativa
+
 export function SearchBox() {
+
     return (
         <Flex
             as="label"
