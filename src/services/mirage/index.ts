@@ -47,11 +47,7 @@ export function makeServer() {
           pageEnd
         );
 
-        return new Response(
-          200,
-          { 'x-total-count': String(total)},
-          { users }
-        )
+        return new Response(200, { "x-total-count": String(total) }, { users });
       });
 
       this.post("/users");
