@@ -54,6 +54,8 @@ export function makeServer() {
           { users: parsedUsers }
         );
       });
+      
+      this.get("/users/:id");
       this.post("/users");
 
       this.namespace = "";
